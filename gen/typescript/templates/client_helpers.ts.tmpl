@@ -33,5 +33,5 @@ const buildResponse = (res: Response): Promise<any> => {
   })
 }
 
-export type Fetch = (input: RequestInfo, init?: RequestInit, signal?: AbortSignal) => Promise<Response>
+export type Fetch = (input: RequestInfo, init?: RequestInit) => Promise<Response>
 {{end}}

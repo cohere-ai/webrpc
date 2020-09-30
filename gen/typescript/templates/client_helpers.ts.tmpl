@@ -28,9 +28,9 @@ const buildResponse = (res: Response): Promise<any> => {
       throw { code: 'unknown', msg: `expecting JSON, got: ${text}`, status } as WebRPCError
     }
     if (!res.ok) {
-      throw { ...data, status } // webrpc error response
+      throw data // webrpc error response
     }
-    return { ...data, status }
+    return data
   })
 }
 

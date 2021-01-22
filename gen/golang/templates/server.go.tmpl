@@ -81,7 +81,7 @@ type WebRPCServer interface {
 
       err = json.Unmarshal(reqBody, &reqContent)
       if err != nil {
-        RespondWithError(w, Errorf(ErrInvalidArgument, err, "failed to unmarshal request data"))
+        RespondWithError(w, Errorf(ErrInternal, err, "failed to unmarshal request data. Is your json valid with the correct types?"))
         return
       }
       {{- end}}

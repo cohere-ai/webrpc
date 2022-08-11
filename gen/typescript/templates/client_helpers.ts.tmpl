@@ -5,7 +5,7 @@ export interface WebRPCError extends Error {
 	status: number
 }
 
-const createHTTPRequest = (body: object = {}, headers: object = {}, signal: AbortSignal = null): object => {
+const createHTTPRequest = (body: object = {}, headers: object = {}, signal: AbortSignal | null = null): object => {
   return {
     method: 'POST',
     headers: { ...headers, 'Content-Type': 'application/json' },

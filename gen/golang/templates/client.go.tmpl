@@ -183,7 +183,7 @@ func errorFromResponse(resp *http.Response) Error {
   }
   var respErr Error
   if err := json.Unmarshal(respBody, &respErr); err != nil {
-    return Errorf(ErrInternal, err, "failed unmarshal error response")
+    return Errorf(ErrInternal, err, "failed unmarshal error response: %s", string(respBody))
   }
   return respErr
 }
